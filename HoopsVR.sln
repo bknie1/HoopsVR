@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoot Hoop", "Assembly-CSharp.csproj", "{FCA556BC-3476-ABB2-0E9D-7CEB161EA621}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoopsVR", "Assembly-CSharp.csproj", "{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FCA556BC-3476-ABB2-0E9D-7CEB161EA621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCA556BC-3476-ABB2-0E9D-7CEB161EA621}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCA556BC-3476-ABB2-0E9D-7CEB161EA621}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCA556BC-3476-ABB2-0E9D-7CEB161EA621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
