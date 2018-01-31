@@ -1,19 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Scorekeeper : MonoBehaviour {
-	private int score;
-	// Use this for initialization
-	void Start () {
+/* Global score singleton. */
+
+public class ScoreKeeper : MonoBehaviour {
+
+	private static ScoreKeeper _instance;
+	public int score; // Our single score tracker.
+	public int miss = 0;
+
+	//-------------------------------------------------------------------------
+	public static ScoreKeeper Instance {
+		get { return _instance; }
 	}
 	//-------------------------------------------------------------------------
-	// Update is called once per frame
-	void Update () {
+	void Awake() {
+		if (_instance == null) {
+			_instance = this;
+		} else Object.Destroy (this);
 	}
 	//-------------------------------------------------------------------------
-	void OnCollisionEnter(Collision collisionInfo) {
-		score++;
-		Debug.Log("Score: " + score);
+	void Update() {
+		if (miss >= 3) {
+			SceneManager.LoadScene ("03_GameOver");
+		}
 	}
 }
