@@ -11,6 +11,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public int score = 0; // Our single score tracker.
 	public int miss = 0; // Our miss counter.
 	const int MISS_MAX = 3; // Our miss limit. Here for easy modification.
+	public float levelTimer = 15.0f; // Set on New Game.
 
 	//-------------------------------------------------------------------------
 	public static ScoreKeeper Instance {
@@ -24,9 +25,16 @@ public class ScoreKeeper : MonoBehaviour {
 	}
 	//-------------------------------------------------------------------------
 	void Update() {
-		// Game end detection.
-		if (ScoreKeeper.Instance.miss >= 3) {
+		// Game end detection. Misses or flat timer, depending on game mode?
+		if (ScoreKeeper.Instance.levelTimer <= 0) {
 			SceneManager.LoadScene ("03_GameOver");
+		}
+
+		// Only time active play.
+		Scene currentScene = SceneManager.GetActiveScene ();
+		if (currentScene.name == "02_Game") {
+			levelTimer -= Time.deltaTime; // How much time it has taken to render ea. frame.
+			Debug.Log ("Time remaining: " + levelTimer);
 		}
 	}
 }

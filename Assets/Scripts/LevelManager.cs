@@ -8,7 +8,10 @@ public class LevelManager : MonoBehaviour {
 	public void NewGame() {
 		ScoreKeeper.Instance.score = 0; // Reset
 		ScoreKeeper.Instance.miss = 0; // Reset
-		Debug.Log("Reset values.");
+
+		// Different difficulties == different clock timers? Difficulty option.
+		ScoreKeeper.Instance.levelTimer = 15.0f;
+
 		Debug.Log ("Loading New Game.");
 		SceneManager.LoadScene ("02_Game");
 	}
