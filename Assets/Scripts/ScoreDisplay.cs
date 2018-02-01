@@ -9,8 +9,10 @@ public class ScoreDisplay : MonoBehaviour {
 	//-------------------------------------------------------------------------
 	void Start () {
 		points = transform.Find ("Points").GetComponent<Text> ();
+		try {
 		points.text = ScoreKeeper.Instance.score.ToString();
 		Debug.Log ("Displayed recent score.");
+		} catch (MissingReferenceException mre) { Debug.Log ("Error: " + mre); }
 	}
 	//-------------------------------------------------------------------------
 }

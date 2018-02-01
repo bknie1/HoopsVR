@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Ball_Launcher.cs" />
+     <Compile Include="Assets\Scripts\BuzzerSound.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Rotate_Camera.cs" />
      <Compile Include="Assets\Scripts\ScoreDisplay.cs" />

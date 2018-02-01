@@ -23,7 +23,9 @@ public class ScoreRegister : MonoBehaviour {
 			}
 		}
 
-		// Play random sound effect here?
+		AudioSource bounce = GetComponent<AudioSource> ();
+		bounce.volume = .5f;
+		bounce.Play();
 
 		collided = true; // Finally, toggle flag so we only register the first.
 	}
