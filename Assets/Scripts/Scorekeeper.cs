@@ -24,13 +24,6 @@ public class ScoreKeeper : MonoBehaviour {
 	}
 	//-------------------------------------------------------------------------
 	void Update() {
-		// New game detection.
-		Scene currentScene = SceneManager.GetActiveScene();
-		if (currentScene.name == "01_Menu") {
-			score = 0; // Reset
-			miss = 0; // Reset
-			Debug.Log("Reset values.");
-		}
 		// Game end detection.
 		if (ScoreKeeper.Instance.miss >= 3) {
 			SceneManager.LoadScene ("03_GameOver");

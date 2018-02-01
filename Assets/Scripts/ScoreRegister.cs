@@ -22,6 +22,9 @@ public class ScoreRegister : MonoBehaviour {
 				Debug.Log ("Global Misses: " + ScoreKeeper.Instance.miss);
 			}
 		}
+
+		// Play random sound effect here?
+
 		collided = true; // Finally, toggle flag so we only register the first.
 	}
 }
