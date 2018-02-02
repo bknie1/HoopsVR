@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoopsVR", "Assembly-CSharp.csproj", "{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoopsVR", "Assembly-CSharp-Editor.csproj", "{2D253B2D-ACFE-820F-2C2A-A412F38D94FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D7EC8B1-2AAE-2B9E-36FB-35296985EAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D253B2D-ACFE-820F-2C2A-A412F38D94FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D253B2D-ACFE-820F-2C2A-A412F38D94FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D253B2D-ACFE-820F-2C2A-A412F38D94FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D253B2D-ACFE-820F-2C2A-A412F38D94FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
