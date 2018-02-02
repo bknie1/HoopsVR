@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball_Launcher : MonoBehaviour {
+public class BallLauncher : MonoBehaviour {
 
 	public GameObject basketball;
-	public float velocity = 10.5f;
+	public float velocity = 6.1f; // 0.5
+	public float velocityMod = 1.0f; // 10.0
 	public float timer = 10.0f;
 	Vector3 offset = new Vector3(0, .20f, 0);
 	//------------------------------------------------------------------------------------------
@@ -17,19 +18,24 @@ public class Ball_Launcher : MonoBehaviour {
 	// Update is called once per frame
 	// Spawns a ball and assigns direction based on user input.
 	void Update () {
-		//if (Input.GetMouseButtonDown (0)) Spawn(); // On left click, spawn ball.
-		if (Input.GetButtonDown("Fire1")) Spawn_Ball();
+		if (Input.GetButtonDown("Fire1") || GvrControllerInput.ClickButtonDown) spawnBall();
 	}
 	//------------------------------------------------------------------------------------------
 	// Creates a basketball, destroys after delay.
-	void Spawn_Ball() {
-		Camera camera = GetComponentInParent<Camera> ();
+	void spawnBall() {
+		// Create the ball.
 		GameObject ball = Instantiate (basketball);
 		ball.transform.position = this.transform.position - offset; // Sets ball position on camera.
 		Rigidbody rb = ball.GetComponent<Rigidbody> ();
-		// Launches ball in camera direction.
-		rb.velocity = camera.transform.rotation * Vector3.forward * velocity;
+
+		// Spawn ball in direction of laser pointer. Reduce velocity.
+		var controllerQ = GvrControllerInput.Orientation;
+
+		rb.velocity = controllerQ * Vector3.forward * velocity * velocityMod;
+
 		Debug.Log ("Ball spawned.");
+
+		// Destroys ball after a delay.
 		Destroy(ball, timer);
 	}
 	//------------------------------------------------------------------------------------------
