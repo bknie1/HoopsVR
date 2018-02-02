@@ -33,8 +33,6 @@ public class BallLauncher : MonoBehaviour {
 
 		rb.velocity = controllerQ * Vector3.forward * velocity * velocityMod;
 
-		Debug.Log ("Ball spawned.");
-
 		// Destroys ball after a delay.
 		Destroy(ball, timer);
 	}
