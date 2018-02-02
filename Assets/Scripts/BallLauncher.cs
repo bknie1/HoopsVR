@@ -23,12 +23,13 @@ public class Ball_Launcher : MonoBehaviour {
 	//------------------------------------------------------------------------------------------
 	// Creates a basketball, destroys after delay.
 	void Spawn_Ball() {
-		Camera camera = GetComponentInChildren<Camera>();
+		Camera camera = GetComponentInParent<Camera> ();
 		GameObject ball = Instantiate (basketball);
 		ball.transform.position = this.transform.position - offset; // Sets ball position on camera.
 		Rigidbody rb = ball.GetComponent<Rigidbody> ();
 		// Launches ball in camera direction.
 		rb.velocity = camera.transform.rotation * Vector3.forward * velocity;
+		Debug.Log ("Ball spawned.");
 		Destroy(ball, timer);
 	}
 	//------------------------------------------------------------------------------------------

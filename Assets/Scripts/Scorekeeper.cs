@@ -34,7 +34,7 @@ public class ScoreKeeper : MonoBehaviour {
 		Scene currentScene = SceneManager.GetActiveScene ();
 		if (currentScene.name == "02_Game") {
 			levelTimer -= Time.deltaTime; // How much time it has taken to render ea. frame.
-			Debug.Log ("Time remaining: " + levelTimer);
+			// Debug.Log ("Time remaining: " + levelTimer); // DEBUG
 		}
 	}
 }

@@ -66,3 +66,4 @@ D:\Projects\HoopsVR\Temp\bin\Debug\UnityEditor.VR.xml
 D:\Projects\HoopsVR\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
 D:\Projects\HoopsVR\obj\Debug\Assembly-CSharp.dll
 D:\Projects\HoopsVR\obj\Debug\Assembly-CSharp.pdb
+D:\Projects\HoopsVR\Temp\bin\Debug\Google.ProtocolBuffers.dll
