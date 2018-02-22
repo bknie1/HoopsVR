@@ -5,6 +5,14 @@ using UnityEngine;
 public class ScoreRegister : MonoBehaviour {
 
 	private bool collided = false; // One score registration per spawn.
+	private static AudioSource bounce;
+	//-------------------------------------------------------------------------
+	public void OnCollisionEnter(Collision col) {
+		// Regardless, play bounce sound on contact.
+		bounce = GetComponent<AudioSource> (); // Assign sound.
+		bounce.volume = .5f;
+		bounce.Play();
+	}
 	//-------------------------------------------------------------------------
     public void OnTriggerEnter(Collider obj) {
 		/* Basketball scoring system. */
@@ -14,22 +22,15 @@ public class ScoreRegister : MonoBehaviour {
 			ScoreKeeper.Instance.score += 2;
 			Debug.Log ("Global Score: " + ScoreKeeper.Instance.score);
 		}
-		// However, if we collide with anything else first... it's a miss!
-		// Reminder: After n misses, the game ends.
 
-		/*
+		// Miss tracker for future game modes.
 		else {
 			if (obj.gameObject.name == "Ground" && !collided) {
 				ScoreKeeper.Instance.miss += 1;
 				Debug.Log ("Global Misses: " + ScoreKeeper.Instance.miss);
 			}
 		}
-		*/
-
-		AudioSource bounce = GetComponent<AudioSource> ();
-		bounce.volume = .5f;
-		bounce.Play();
-
 		collided = true; // Finally, toggle flag so we only register the first.
 	}
+	//-------------------------------------------------------------------------
 }
